@@ -1,11 +1,6 @@
-import controller.controller as cc
-import inspect
-print(">>> Controller geladen aus:", inspect.getfile(cc))
-
-
-from adapter.db_dummy import DummyDB
-from adapter.view_dummy import DummyView
-from controller.controller import AnzeigetafelController
+from adapter.db_dummy import DummyDB # type: ignore
+from adapter.view_dummy import DummyView # type: ignore
+from controller.controller import AnzeigetafelController # type: ignore
 
 
 def main():
@@ -20,5 +15,5 @@ def main():
     controller.goal_away()
 
 
-if __name__ == "__main__":
+if __name__ == "_main_":
     main()

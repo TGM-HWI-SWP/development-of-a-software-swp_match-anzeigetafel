@@ -7,7 +7,7 @@ from models.player import Player
 class AnzeigetafelController:
     """Geschäftslogik der Stadionanzeigetafel."""
 
-    def __init__(self, db: DatabasePort, view: ViewPort):
+    def _init_(self, db: DatabasePort, view: ViewPort):
         self.db = db
         self.view = view
         self.score_home = 0
