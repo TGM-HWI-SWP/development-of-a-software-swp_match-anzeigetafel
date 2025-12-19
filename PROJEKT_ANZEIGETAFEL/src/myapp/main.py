@@ -20,7 +20,7 @@ def main():
     controller.goal_away()
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
 
 
@@ -34,5 +34,5 @@ def main():
     app.mainloop()
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
