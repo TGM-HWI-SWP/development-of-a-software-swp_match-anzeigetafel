@@ -1,38 +1,17 @@
-import controller.controller as cc
-import inspect
-print(">>> Controller geladen aus:", inspect.getfile(cc))
-
-
 from adapter.db_dummy import DummyDB
-from adapter.view_dummy import DummyView
+from adapter.view_ctk import CTkView
 from controller.controller import AnzeigetafelController
 
-
 def main():
-    db = DummyDB()           # später: SQLiteDB("stadion.db")
-    view = DummyView()       # später: echte GUI view_ctk.py
-    controller = AnzeigetafelController(db, view)
+    db = DummyDB()  # Dummy-Datenbank
+    controller = AnzeigetafelController(db)
+    view = CTkView(controller)
+    controller.set_view(view)
 
-    # MVP Demo
+    # Optional: Dummy Teams laden
     controller.show_all_teams()
-    controller.show_players_of_team(1)
-    controller.goal_home()
-    controller.goal_away()
 
-
-if __name__ == "__main__":
-    main()
-
-
-
-
-from adapter.view_ctk import CTkView
-
-
-def main():
-    app = CTkView()
-    app.mainloop()
-
+    view.mainloop()
 
 if __name__ == "__main__":
     main()
