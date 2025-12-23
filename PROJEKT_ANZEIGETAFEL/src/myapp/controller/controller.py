@@ -59,3 +59,17 @@ class AnzeigetafelController:
         teams = self.db.get_teams()
         if self.view:
             self.view.show_teams(teams)
+
+
+    # In AnzeigetafelController.py
+    def goal_home(self):
+        self.score_home += 1
+        if self.view:
+            self.view.update_score(self.score_home, self.score_away)
+            self.view.blink_score()
+
+    def goal_away(self):
+        self.score_away += 1
+        if self.view:
+            self.view.update_score(self.score_home, self.score_away)
+            self.view.blink_score()
